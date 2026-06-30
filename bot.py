@@ -86,14 +86,14 @@ async def send_anonymous_media(target_id: int, message: Message, reply_to_id: in
         [InlineKeyboardButton(text="🖊 Javob qaytarish", callback_data=f"reply_{message.from_user.id}")]
     ])
 
-    caption_text = "<b>📩 Sizga yangi anonim xabar keldi! </b>"
+    caption_text = "<b>💬</b>"
     if message.caption:
         caption_text += f"\n\n{message.caption}"
 
     if message.text:
         return await bot.send_message(
             chat_id=target_id,
-            text=f"<b>📩 Sizga yangi anonim xabar keldi! </b>\n\n{message.text}",
+            text=f"<b>💬</b>\n\n{message.text}",
             reply_markup=reply_kb,
             reply_to_message_id=reply_to_id,
             parse_mode="HTML"
